@@ -1,10 +1,30 @@
-const addSccore = (name, score, ul) => {
-  if (name !== undefined && score !== undefined) {
-    if (ul !== undefined) {
-      const li = document.createElement('li'); // Corrected typo: "createELement" to "createElement"
-      li.innerHTML = `${name} ${score}`; // Removed "li.document" before innerHTML
-      ul.appendChild(li); // Assuming ul is a valid reference to the <ul> element
-    }
-  }
+import BASE_API_URL from './BaseUrl.js';
+
+const recentScores = (name, score) => {
+  const li = document.createElement('li');
+  li.innerHTML = `${name} ${score}`;
+  return li;
 };
-export default addSccore;
+
+const getGame = async (id) => {
+  const response = await fetch(`${BASE_API_URL}games/${id}/scores/`);
+  const data = await response.json();
+  return data.result;
+};
+
+const addScore = async (name, score, id) => {
+  if (name !== undefined && score !== undefined) {
+    const response = await fetch(`${BASE_API_URL}games/${id}/scores/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ user: name, score }),
+    });
+    const data = await response.json();
+    return data.result;
+  }
+  return null;
+};
+
+export { addScore, getGame, recentScores };

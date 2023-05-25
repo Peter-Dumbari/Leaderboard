@@ -1,8 +1,8 @@
 import BASE_API_URL from './BaseUrl.js';
 
-const recentScores = (name, score) => {
+const recentScores = (name, score, index) => {
   const li = document.createElement('li');
-  li.innerHTML = `${name} ${score}`;
+  li.innerHTML = `${index + 1}. ${name} ${score}`;
   return li;
 };
 

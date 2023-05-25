@@ -1,0 +1,106 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f1f2f5 !important;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.main_container {
+  width: 70%;
+  padding: 4rem;
+  background-color: #e9496926;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 3rem;
+  gap: 3rem;
+}
+
+.created_scores_container {
+  overflow: scroll;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recent_scores_container {
+  width: 50%;
+}
+
+.recent_scores_ul {
+  margin-top: 10px;
+  height: 500px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.recent_scores_ul li {
+  list-style: none;
+  padding: 10px;
+}
+
+.recent_scores_ul li:nth-child(odd) {
+  background-color: white;
+}
+
+.recent_scores_ul li:nth-child(even) {
+  background-color: #e949699e;
+  color: white; /* Optionally change the text color for better contrast */
+}
+
+.add_score_container {
+  width: 50%;
+}
+
+.btn {
+  padding: 8px 17px;
+  border-radius: 20px;
+  border-color: #e9496a;
+  background: transparent;
+  color: #e9496a;
+  font-weight: bold;
+  outline: none;
+  border-style: solid;
+  cursor: pointer;
+}
+
+.btn:is(:disabled) {
+  color: #e949696c;
+  border-color: #e9496980;
+}
+
+.refresh_btn {
+  background-color: #e9496a;
+  padding: 7px 10px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+input {
+  padding: 10px 15px;
+  width: 100%;
+  margin: 10px 0;
+  border: none;
+}
+
+input:is(:focus, :active) {
+  outline: none;
+}
+
+.button_container {
+  text-align: right;
+}
